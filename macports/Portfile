@@ -1,0 +1,32 @@
+# -*- coding: utf-8; mode: tcl; tab-width: 4; indent-tabs-mode: nil; c-basic-offset: 4 -*- vim:fenc=utf-8:ft=tcl:et:sw=4:ts=4:sts=4
+# $Id$
+
+PortSystem          1.0
+PortGroup           github 1.0
+
+github.setup        rodnaph quids 1.0.0 v
+categories          devel shells
+platforms           darwin
+maintainers         pu-gh.com:rod
+license             MIT
+description         Allows downloading InfoQ videos
+long_description    Quids is a super-simple script to allow easy \
+                    downloading of videos from infoq.com from the \
+                    command line.
+
+checksums           rmd160  9c1185a5c5e9fc54612808977ee8f548b2258d31 \
+                    sha256  e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+
+use_configure       no
+supported_archs     noarch
+
+build               {}
+
+destroot            {
+    xinstall -m 0755 ${worksrcpath}/quids \
+        ${destroot}${prefix}/bin/quids
+    xinstall -d ${destroot}${prefix}/share/doc/${name}
+    xinstall -m 0644 ${worksrcpath}/LICENSE \
+        ${destroot}${prefix}/share/doc/${name}
+}
+
