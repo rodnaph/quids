@@ -8,7 +8,7 @@ offline viewing.
 Clone the repo and...
 
 ```
-php quids.php The-Video-Name
+./quids The-Video-Name
 ```
 
 Where the video name is the title of the page from the URL.
